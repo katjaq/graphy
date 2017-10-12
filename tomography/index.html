@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<title>tomography</title>
+		<link rel="stylesheet" type="text/css" href="../master.css" />
+		<script data-main="app" src="../js/lib/require.js"></script>
+		<link rel="shortcut icon" type="image/x-icon" href="../star16.png" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="title">
+				<h1 id="title" >tomography</h1>
+			</div>
+			<div class="navigation">
+				<h2><a href="../index.html">*graphy</a></h2>
+				<h2 id="fiwi" ><a href="#fiwi">fire&wire</a></h2>
+				<h2 id="brain" ><a href="#brain">brain networks</a></h2>
+				<!--<h2 id="instal" ><a href="#instal">installation</a></h2>-->
+				<h2 id="inter" ><a href="#inter">interactive</a></h2>
+				<h2 id="artofmr" ><a href="#artofmr">art of mr</a></h2>
+				<h2 id="unfolding" ><a href="#unfolding">unfold tractography</a></h2>
+			</div>
+			<div class="content" id="previewDiv">
+				<img id="previewImg" src="preview.jpg"></img>
+			</div>
+			<div class="content" id="contentDiv1" style="display:none">
+				<div id='ytplayer'>
+					
+				</div>
+			</div>
+			<div class="content" id="contentDiv2" style="display:none">
+				<a href="#brain2" ><img src="content/brainnetworks.jpg"></a>
+			</div>
+			<div class="content" id="contentDiv3" style="display:none">
+				<video id="video3" width="640" height="360" controls>
+					<source src="content/cube_mute.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<div class="content" id="contentDiv4" style="display:none">
+				<video id="video4" width="640" height="360" controls>
+					<source src="content/stagingtheconnectomeSMALL.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+
+
+			<div class="content" id="contentDiv5" style="display:none">
+				<img id="img001" src="content/gallery/001.jpg" style="display:none">
+				<img id="img002" src="content/gallery/002.jpg" style="display:none">
+				<img id="img003" src="content/gallery/003.jpg" style="display:none">
+				<img id="img004" src="content/gallery/004.jpg" style="display:none">
+				<img id="img005" src="content/gallery/005.gif" style="display:none">
+				<img id="img006" src="content/gallery/006.gif" style="display:none">
+				<img id="img007" src="content/gallery/007.gif" style="display:none">
+				<img id="img008" src="content/gallery/008.gif" style="display:none">
+				<img id="img009" src="content/gallery/009.jpg" style="display:none">
+				<img id="img010" src="content/gallery/010.jpg" style="display:none">
+				<img id="img011" src="content/gallery/011.jpg" style="display:none">
+				<img id="img012" src="content/gallery/012.jpg" style="display:none">
+			</div>
+			<div class="thumbDiv" id="contentDiv5b" style="display:none">
+			</div>
+			
+			
+			<div style="display:none">
+			<div class="controlTab" id="infoTab" style="display:none">
+	    		<section id="info1">
+	    			Experimental connectome viewer. 
+	    			<br>
+	    			Due the experimental nature of this site some features may be broken or may not
+	    			work as intended. If you notice any bugs please don't hesitate to report them to me.
+	    		</section>
+	    		<section>
+	    			<br>
+	    			This project is open source under the GNU lesser GPL. The source
+	    			code is available at <a href="http://code.google.com/p/conview/">google code.</a>
+	    			<br>
+	    		</section>
+	    		<section>
+	    			<br>
+	    			For any questions or feedback contact schurade(at)cbs.mpg.de
+	    			<br> 
+	    		</section>
+	    		<br><br>
+	    	</div>
+	    	<div class="controlTab" id="controlTab1" style="display:none">
+				<section id="controls">	
+					<div id="controls-toggles">
+					<input type="button" id="button_localFiberColor" value="toggle fibre color">
+					<input type="button" id="button_textureInterpolation" value="toggle fibre tubes">
+					<input type="button" id="button_toggleSlices" value="toggle slices">
+					<!-- <input type="button" id="button_toggleTooltips" value="toggle tooltips"> -->
+					</div>
+					<br>
+				</section>
+			</div>
+			<div class="controlTab" id="mriTab" style="display:block">
+				<section id="textures">
+					<div id="controls-slices">
+						<div><label for="sliceX">X</label><input type="range" min="0" max="255" id="sliceX" value="76" step="1" /> <span class="value"></span></div>
+						<div><label for="sliceY">Y</label><input type="range" min="0" max="255" id="sliceY" value="100" step="1" /> <span class="value"></span></div>
+						<div><label for="sliceZ">Z</label><input type="range" min="0" max="255" id="sliceZ" value="80" step="1" /> <span class="value"></span></div>
+					</div>
+					<table>
+						<tr>
+							<th>Primary MRI</th>
+						</tr>
+						<tr>
+							<td><select id="textureSelect"></select></td>
+						</tr>
+						<tr>
+							<th>Overlay</th>
+							<th>Color Map</th>
+						</tr>
+						<tr>
+							<td>
+								<select id="textureSelect2">
+									<option value="none">none</option>
+								</select>
+							</td>
+							<td>
+								<select id="colormapSelect">
+									<option value="0">none</option>
+									<option value="1">Red-Yellow</option>
+	     							<option value="2">Blue-Light Blue</option>
+	     							<option value="3">Rainbow</option>
+								</select>
+							</td>
+						</tr>
+					</table>
+					<br>
+					<div class="texSliders">
+					thresholds:
+					<br>
+					<table>
+						<tr>
+							<td id="tn">&nbsp;</td>
+							<td><input type="range" min="0" max="100" id="threshold1" value="0" step="1"  /></td>
+							<td><input type="range" min="0" max="100" id="threshold2" value="0" step="1"  /></td>
+							<td id="tp">&nbsp;</td>
+						</tr>
+						<tr>
+							<td>alpha</td>
+						</tr>
+						<tr>
+							<td id="texAlpha">&nbsp;</td>
+							<td><input type="range" min="0" max="1.0" id="alpha2" value="1.0" step="0.01" /></td>
+						</tr>
+					</table>
+					<br><input type="checkbox" id="interpolate">disable texture interpolation<br>
+					</div>
+				</section>
+			</div>
+			
+			<div class="controlTab" id="elementTab" style="display:none">
+				<section id="elements"></section>
+				<select id="elementSelect">
+				</select>
+				<br />
+				<input type="range" min="0" max="100" id="elementAlpha" value="0" step="1" />
+			</div>
+		
+			<div class="controlTab" id="status">
+				Loading...Please wait.
+			</div>
+			<div class="controlTab" id="divViewButtons">
+	    	<section id="viewButtons"></section>
+	    	</div>
+			<div class="controlTab" id="divSceneButtons">
+	    	<section id="sceneButtons"></section>
+	    	</div>
+			</div>
+			
+			
+			<div class="content" id="viewer-div" style="display:none">
+				<canvas id="viewer-canvas"></canvas>
+			</div>
+			<div id="status"></div>
+			<script>window.settings = {'DATA_URL': './content/data/'};</script>
+		</div>
+	</body>
+</html>
