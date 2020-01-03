@@ -4,7 +4,7 @@ body {
 	background-color: #000000;
 	color: #ffffff;
 	font-family: "Droid Serif", serif;
-	font-size: 15px
+	font-size: 15px;
 }
 
 h1 {
@@ -23,7 +23,7 @@ h2 {
 
 a {
 	color: #ffffff;
-	text-decoration: none
+	text-decoration: none;
 }
 
 .container {
@@ -52,6 +52,16 @@ a {
 }
 
 .content {
+	position:absolute;
+	background: #000000;
+	width: 640px;
+	height: 500px;
+	overflow: hidden;
+	top: 320px;
+	left: 240px;
+}
+
+.textcontent {
 	position:absolute;
 	background: #000000;
 	width: 640px;
